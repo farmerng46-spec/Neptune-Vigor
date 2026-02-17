@@ -20,17 +20,17 @@ import lombok.Getter;
 public enum SoundsLocale implements IDataAccessor {
     MATCH_START("match-start", "Plays for all players when the match starts", DataType.STRING, "entity.firework_rocket.blast"),
     MATCH_START_COUNTDOWN("match-start-countdown", "Plays for all players after each second in the match start countdown and new round start countdown", DataType.STRING, "block.note_block.xylophone"),
-    MENU_START2("menu-start2", "Plays for all players when the match starts", DataType.STRING, "block.note_block.bell");
+    MENU_START2("menu-start2", "Plays for all players when the match starts", DataType.STRING, "block.note_block.bell"),
     PLAYER_KILL("player-kill", "Plays for the player who killed another player", DataType.STRING, "entity.experience_orb.pickup"),
     PLAYER_DEATH("player-death", "Plays for the player who died", DataType.STRING, "block.note_block.ping"),
     PLAYER_RESPAWN("player-respawn", "Plays for the player who respawned", DataType.STRING, "ui.button.click"),
     BED_BROKEN("bed-broken", "Plays for all players when a bed is broken", DataType.STRING, "entity.ender_dragon.growl"),
     MATCH_PARTICIPANT_DIED("match-participant-died", "Plays for all players when someone in the match dies", DataType.STRING, "entity.experience_orb.pickup"),
-    MENU_BUTTON_CLICK("menu-button-click", "Plays when a player clicks a button in a menu", DataType.STRING, "ui.button.click");
-    MACTH_VICTORY("match-victory", "Plays when a player clicks a button in a menu", DataType.STRING, "ui.toast.challenge_complete");
-    MATCH_LOSE("match-lose", "Plays when a player clicks a button in a menu", DataType.STRING, "block.beacon.deactivate");
-    MATCH_FIND("menu-button-click", "Plays for all queued player", DataType.STRING, "block.amethyst_block.hit");
-    PARTY_JOIN("party_join", "Plays when you join in a party", DataType.STRING, "block.amethyst_block.hit");
+    MENU_BUTTON_CLICK("menu-button-click", "Plays when a player clicks a button in a menu", DataType.STRING, "ui.button.click"),
+    MACTH_VICTORY("match-victory", "Plays when a player clicks a button in a menu", DataType.STRING, "ui.toast.challenge_complete"),
+    MATCH_LOSE("match-lose", "Plays when a player clicks a button in a menu", DataType.STRING, "block.beacon.deactivate"),
+    MATCH_FIND("menu-button-click", "Plays for all queued player", DataType.STRING, "block.amethyst_block.hit"),
+    PARTY_JOIN("party_join", "Plays when you join in a party", DataType.STRING, "block.amethyst_block.hit"),
     PARTY_CREATE("party_create", "Plays when you create a party", DataType.STRING, "item.goat_horn.sound.1");
     private final String path;
     private final String comment;
