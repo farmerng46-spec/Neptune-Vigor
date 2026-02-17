@@ -75,15 +75,38 @@ public class SoloFightMatch extends Match implements ISoloFightMatch {
         Participant winner = getWinner();
 
         winner.sendTitle(CC.color(MessagesLocale.MATCH_WINNER_TITLE_HEADER.getString()),
-                CC.color(MessagesLocale.MATCH_WINNER_TITLE_FOOTER.getString().replace("<player>",
-                        MessagesLocale.MATCH_YOU.getString())),
-                100);
+        CC.color(MessagesLocale.MATCH_WINNER_TITLE_FOOTER.getString().replace("<player>",
+                MessagesLocale.MATCH_YOU.getString())),
+        100);
 
-        if (!loser.isLeft() && !loser.isDisconnected())
-            loser.sendTitle(CC.color(MessagesLocale.MATCH_LOSER_TITLE_HEADER.getString()),
-                    CC.color(MessagesLocale.MATCH_LOSER_TITLE_FOOTER.getString().replace("<player>",
-                            winner.getNameUnColored())),
-                    100);
+try {
+    winner.playSound(
+            winner.getLocation(),
+            org.bukkit.Sound.valueOf(
+                    SoundsLocale.MATCH_VICTORY.getString().toUpperCase()
+            ),
+            1.0f,
+            1.0f
+    );
+} catch (IllegalArgumentException ignored) {}
+
+        loser.sendTitle(
+        CC.color(MessagesLocale.MATCH_LOSER_TITLE_HEADER.getString()),
+        CC.color(MessagesLocale.MATCH_LOSER_TITLE_FOOTER.getString().replace("<player>",
+                winner.getName())),
+        100
+);
+
+try {
+    loser.playSound(
+            loser.getLocation(),
+            org.bukkit.Sound.valueOf(
+                    SoundsLocale.MATCH_LOSE.getString().toUpperCase()
+            ),
+            1.0f,
+            1.0f
+    );
+} catch (IllegalArgumentException ignored) {}
 
         if (!isDuel()) {
             addStats();
