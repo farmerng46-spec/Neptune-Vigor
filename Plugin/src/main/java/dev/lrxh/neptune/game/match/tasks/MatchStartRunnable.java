@@ -27,7 +27,7 @@ public class MatchStartRunnable extends NeptuneRunnable {
 
     public MatchStartRunnable(Match match) {
         this.match = match;
-        this.startTimer = match instanceof FfaFightMatch ? 5 : 3;
+        this.startTimer = match instanceof FfaFightMatch ? 5 : 5;
 
         match.teleportToPositions();
         match.setupParticipants();
