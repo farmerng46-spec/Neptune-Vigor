@@ -186,6 +186,7 @@ public class TeamFightMatch extends Match implements ITeamFightMatch {
     public void startMatch() {
         setState(MatchState.IN_ROUND);
         showPlayerForSpectators();
+        playSound(SoundsLocale.getSound(SoundsLocale.MATCH_START2));
         playSound(SoundsLocale.getSound(SoundsLocale.MATCH_START));
         sendTitle(CC.color(MessagesLocale.MATCH_START_TITLE_FOOTER.getString()), CC.color(MessagesLocale.MATCH_START_TITLE_FOOTER.getString()), 10);
     }
