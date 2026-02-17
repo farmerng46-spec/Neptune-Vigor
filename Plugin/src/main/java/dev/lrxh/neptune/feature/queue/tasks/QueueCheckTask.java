@@ -127,7 +127,6 @@ Bukkit.getPlayer(uuid2).playSound(
         1f,
         1f
     );
-}
 
 TaskScheduler.get().startTaskCurrentTick(new NeptuneRunnable() {
     @Override
