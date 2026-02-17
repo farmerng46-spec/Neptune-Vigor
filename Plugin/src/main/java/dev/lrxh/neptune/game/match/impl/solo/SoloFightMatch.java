@@ -322,6 +322,7 @@ try {
     public void startMatch() {
         setState(MatchState.IN_ROUND);
         showPlayerForSpectators();
+        playSound(SoundsLocale.getSound(SoundsLocale.MATCH_START2));
         playSound(SoundsLocale.getSound(SoundsLocale.MATCH_START));
         sendTitle(CC.color(MessagesLocale.MATCH_START_TITLE_HEADER.getString()),
                 CC.color(MessagesLocale.MATCH_START_TITLE_FOOTER.getString()), 20);
