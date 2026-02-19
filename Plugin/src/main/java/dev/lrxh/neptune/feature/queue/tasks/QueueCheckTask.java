@@ -104,11 +104,14 @@ MessagesLocale.MATCH_FOUND.send(uuid1, TagResolver.resolver(
         Placeholder.unparsed("ping", String.valueOf(ping1))
 ));
 
-Bukkit.getPlayer(uuid1).playSound(
-        Bukkit.getPlayer(uuid1).getLocation(),
-        SoundsLocale.getSound(SoundsLocale.MATCH_FOUND),
-        1f,
-        1f
+if (Bukkit.getPlayer(uuid1) != null) {
+    Sound sound = SoundsLocale.getSound(SoundsLocale.MATCH_FOUND);
+    if (sound != null) {
+        Bukkit.getPlayer(uuid1).playSound(
+                Bukkit.getPlayer(uuid1).getLocation(),
+                sound,
+                1f,
+                1f
 );
 
 MessagesLocale.MATCH_FOUND.send(uuid2, TagResolver.resolver(
@@ -121,11 +124,14 @@ MessagesLocale.MATCH_FOUND.send(uuid2, TagResolver.resolver(
         Placeholder.unparsed("ping", String.valueOf(ping2))
 ));
 
-Bukkit.getPlayer(uuid2).playSound(
-        Bukkit.getPlayer(uuid2).getLocation(),
-        SoundsLocale.getSound(SoundsLocale.MATCH_FOUND),
-        1f,
-        1f
+if (Bukkit.getPlayer(uuid2) != null) {
+    Sound sound = SoundsLocale.getSound(SoundsLocale.MATCH_FOUND);
+    if (sound != null) {
+        Bukkit.getPlayer(uuid2).playSound(
+                Bukkit.getPlayer(uuid2).getLocation(),
+                sound,
+                1f,
+                1f
     );
 
 TaskScheduler.get().startTaskCurrentTick(new NeptuneRunnable() {
