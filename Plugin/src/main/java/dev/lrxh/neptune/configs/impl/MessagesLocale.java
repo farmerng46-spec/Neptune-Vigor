@@ -37,7 +37,7 @@ public enum MessagesLocale implements IDataAccessor {
     QUEUE_JOIN("QUEUE.JOIN", DataType.STRING_LIST, "&7(&bDuels&7) Joined Queue"),
     QUEUE_LEAVE("QUEUE.LEAVE", DataType.STRING_LIST, "&7(&bDuels&7) Left queue"),
     QUEUE_ACTION_BAR("QUEUE.ACTION_BAR", DataType.STRING, "&7<kit> 1v1 &8| &a<time>"),
-    QUEUE_REPEAT("QUEUE.REPEAT.MESSAGE", DataType.STRING_LIST, "&aSearching for other players in queue..."),
+    QUEUE_REPEAT("QUEUE.REPEAT.MESSAGE", DataType.STRING_LIST, "&7ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ ᴏᴛʜᴇʀ ᴘʟᴀʏᴇʀꜱ ɪɴ ǫᴜᴇᴜᴇ…"),
     QUEUE_REPEAT_TOGGLE("QUEUE.REPEAT.TOGGLE", DataType.BOOLEAN, "true"),
     QUEUE_NO_ARENAS("QUEUE.NO_ARENAS", DataType.STRING_LIST,
                         "&cNo arenas were found!"),
@@ -64,10 +64,10 @@ public enum MessagesLocale implements IDataAccessor {
     MATCH_START_TITLE_HEADER("MATCH.START.TITLE-HEADER", DataType.STRING, ""),
     MATCH_START_TITLE_FOOTER("MATCH.START.TITLE-FOOTER", DataType.STRING, ""),
     MATCH_WINNER_TITLE_HEADER("MATCH.WINNER.TITLE-HEADER", DataType.STRING, "&6&lᴠɪᴄᴛᴏʀʏ!"),
-    MATCH_WINNER_TITLE_FOOTER("MATCH.WINNER.TITLE-FOOTER", DataType.STRING, "&a<player> &fwon the match!"),
+    MATCH_WINNER_TITLE_FOOTER("MATCH.WINNER.TITLE-FOOTER", DataType.STRING, "&6ʏᴏᴜ ᴡᴏɴ ᴛʜᴇ ɢᴀᴍᴇ!"),
 
         MATCH_LOSER_TITLE_HEADER("MATCH.LOSER.TITLE-HEADER", DataType.STRING, "&c&lᴅᴇꜰᴇᴀᴛ!"),
-        MATCH_LOSER_TITLE_FOOTER("MATCH.LOSER.TITLE-FOOTER", DataType.STRING, "&cʏᴏᴜ ʟᴏꜱᴛ ᴛʜᴇ ɢᴀᴍᴇ"),
+        MATCH_LOSER_TITLE_FOOTER("MATCH.LOSER.TITLE-FOOTER", DataType.STRING, "&cʏᴏᴜ ʟᴏꜱᴛ ᴛʜᴇ ɢᴀᴍᴇ!"),
 
     MATCH_COMMA("MATCH.COMMA", DataType.STRING, "&7, "),
     MATCH_END_DETAILS_SOLO("MATCH.END_DETAILS_MESSAGE.SOLO", DataType.STRING_LIST,
