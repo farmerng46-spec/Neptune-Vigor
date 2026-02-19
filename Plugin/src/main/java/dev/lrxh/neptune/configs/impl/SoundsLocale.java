@@ -29,7 +29,7 @@ public enum SoundsLocale implements IDataAccessor {
     MENU_BUTTON_CLICK("menu-button-click", "Plays when a player clicks a button in a menu", DataType.STRING, "ui.button.click"),
     MATCH_VICTORY("match-victory", "Plays when a player clicks a button in a menu", DataType.STRING, "ui.toast.challenge_complete"),
     MATCH_LOSE("match-lose", "Plays when a player clicks a button in a menu", DataType.STRING, "block.beacon.deactivate"),
-    MATCH_FOUND("menu-button-click", "Plays for all queued player", DataType.STRING, "block.amethyst_block.hit"),
+    MATCH_FOUND("match-found", "Plays for all queued player", DataType.STRING, "block.amethyst_block.hit"),
     PARTY_JOIN("party_join", "Plays when you join in a party", DataType.STRING, "block.amethyst_block.hit"),
     PARTY_CREATE("party_create", "Plays when you create a party", DataType.STRING, "item.goat_horn.sound.1");
     private final String path;
