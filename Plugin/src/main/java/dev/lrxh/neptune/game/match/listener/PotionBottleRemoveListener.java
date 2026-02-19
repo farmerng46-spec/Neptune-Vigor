@@ -1,6 +1,6 @@
 package dev.lrxh.neptune.game.match.listener;
 
-import dev.lrxh.api.API;
+import dev.lrxh.neptune.API;
 import dev.lrxh.neptune.game.kit.impl.KitRule;
 import dev.lrxh.neptune.profile.data.ProfileState;
 import dev.lrxh.neptune.profile.impl.Profile;
