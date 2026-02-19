@@ -1,10 +1,210 @@
 KILL_MESSAGES:
-  DEFAULT:
-    DISPLAY_NAME: '&7Default'
-    MATERIAL: BARRIER
+  NONE:
+    DISPLAY_NAME: '&#00f986ɴᴏɴᴇ'
+    MATERIAL: PAPER
     DESCRIPTION:
-      - '&7Default kill message.'
+      - '&fᴅᴇꜰᴀᴜʟᴛ ᴋɪʟʟ ᴍᴇꜱꜱᴀɢᴇ.'
       - ' '
     SLOT: 10
     MESSAGES:
-      - '&#00A4FC<player> &7ɢᴏᴛ ᴅᴇꜰᴇᴀᴛᴇᴅ ʙʏ &#00A4FC<killer>'
+      - '&#00f986<player> &7ɢᴏᴛ ᴅᴇꜰᴇᴀᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  OBLITERATED:
+    DISPLAY_NAME: '&#00f986ᴏʙʟɪᴛᴇʀᴀᴛᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴛᴏᴛᴀʟ ᴅᴇꜱᴛʀᴜᴄᴛɪᴏɴ.'
+      - ' '
+    SLOT: 11
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴏʙʟɪᴛᴇʀᴀᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  CLIPPED:
+    DISPLAY_NAME: '&#00f986ᴄʟɪᴘᴘᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴘʀᴇᴄɪꜱᴇ ᴀɴᴅ ᴄʟᴇᴀɴ.'
+      - ' '
+    SLOT: 12
+    MESSAGES:
+      - '&#00f986<player> &7ɢᴏᴛ ᴄʟɪᴘᴘᴇᴅ ʙʏ &#00f986<killer>'
+
+  OUTPLAYED:
+    DISPLAY_NAME: '&#00f986ᴏᴜᴛᴘʟᴀʏᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fꜱᴋɪʟʟ ɢᴀᴘ.'
+      - ' '
+    SLOT: 13
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴏᴜᴛᴘʟᴀʏᴇᴅ ʙʏ &#00f986<killer>'
+
+  DESTROYED:
+    DISPLAY_NAME: '&#00f986ᴅᴇꜱᴛʀᴏʏᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fɴᴏ ᴄʜᴀɴᴄᴇ.'
+      - ' '
+    SLOT: 14
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴅᴇꜱᴛʀᴏʏᴇᴅ ʙʏ &#00f986<killer>'
+
+  ERASED:
+    DISPLAY_NAME: '&#00f986ᴇʀᴀꜱᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fʀᴇᴍᴏᴠᴇᴅ ꜰʀᴏᴍ ᴇxɪꜱᴛᴇɴᴄᴇ.'
+      - ' '
+    SLOT: 15
+    MESSAGES:
+      - '&#00f986<player> &7ɢᴏᴛ ᴇʀᴀꜱᴇᴅ ʙʏ &#00f986<killer>'
+
+  DIFFED:
+    DISPLAY_NAME: '&#00f986ᴅɪꜰꜰᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fꜱᴛʀᴀɪɢʜᴛ ᴜᴘ ᴅɪꜰꜰ.'
+      - ' '
+    SLOT: 16
+    MESSAGES:
+      - '&#00f986<player> &7ɢᴏᴛ ᴅɪꜰꜰᴇᴅ ʙʏ &#00f986<killer>'
+
+  ONE_TAPPED:
+    DISPLAY_NAME: '&#00f986ᴏɴᴇ ᴛᴀᴘᴘᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fɪɴꜱᴛᴀɴᴛ ᴇʟɪᴍɪɴᴀᴛɪᴏɴ.'
+      - ' '
+    SLOT: 17
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴏɴᴇ ᴛᴀᴘᴘᴇᴅ ʙʏ &#00f986<killer>'
+
+  DEMOLISHED:
+    DISPLAY_NAME: '&#00f986ᴅᴇᴍᴏʟɪꜱʜᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴛᴏᴛᴀʟ ᴅᴏᴍɪɴᴀᴛɪᴏɴ.'
+      - ' '
+    SLOT: 18
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴅᴇᴍᴏʟɪꜱʜᴇᴅ ʙʏ &#00f986<killer>'
+
+  HUMILIATED:
+    DISPLAY_NAME: '&#00f986ʜᴜᴍɪʟɪᴀᴛᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fɴᴏ ᴍᴇʀᴄʏ.'
+      - ' '
+    SLOT: 19
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ʜᴜᴍɪʟɪᴀᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  SHATTERED:
+    DISPLAY_NAME: '&#00f986ꜱʜᴀᴛᴛᴇʀᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fʙʀᴏᴋᴇɴ ᴀᴘᴀʀᴛ.'
+      - ' '
+    SLOT: 20
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ꜱʜᴀᴛᴛᴇʀᴇᴅ ʙʏ &#00f986<killer>'
+
+  SENT_HOME:
+    DISPLAY_NAME: '&#00f986ꜱᴇɴᴛ ʜᴏᴍᴇ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fʙᴀᴄᴋ ᴛᴏ ʟᴏʙʙʏ.'
+      - ' '
+    SLOT: 21
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ꜱᴇɴᴛ ʜᴏᴍᴇ ʙʏ &#00f986<killer>'
+
+  PACKED:
+    DISPLAY_NAME: '&#00f986ᴘᴀᴄᴋᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fꜱᴜɪᴛᴄᴀꜱᴇ ʀᴇᴀᴅʏ.'
+      - ' '
+    SLOT: 22
+    MESSAGES:
+      - '&#00f986<player> &7ɢᴏᴛ ᴘᴀᴄᴋᴇᴅ ʙʏ &#00f986<killer>'
+
+  FOLDED:
+    DISPLAY_NAME: '&#00f986ꜰᴏʟᴅᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fꜰᴏʟᴅᴇᴅ ʟɪᴋᴇ ᴘᴀᴘᴇʀ.'
+      - ' '
+    SLOT: 23
+    MESSAGES:
+      - '&#00f986<player> &7ɢᴏᴛ ꜰᴏʟᴅᴇᴅ ʙʏ &#00f986<killer>'
+
+  TERMINATED:
+    DISPLAY_NAME: '&#00f986ᴛᴇʀᴍɪɴᴀᴛᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴇxᴇᴄᴜᴛɪᴏɴ ᴄᴏᴍᴘʟᴇᴛᴇ.'
+      - ' '
+    SLOT: 24
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴛᴇʀᴍɪɴᴀᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  VAPORIZED:
+    DISPLAY_NAME: '&#00f986ᴠᴀᴘᴏʀɪᴢᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fɢᴏɴᴇ ɪɴꜱᴛᴀɴᴛʟʏ.'
+      - ' '
+    SLOT: 25
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴠᴀᴘᴏʀɪᴢᴇᴅ ʙʏ &#00f986<killer>'
+
+  DELETED:
+    DISPLAY_NAME: '&#00f986ᴅᴇʟᴇᴛᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴇʀʀᴏʀ 404.'
+      - ' '
+    SLOT: 26
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴅᴇʟᴇᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  ANNIHILATED:
+    DISPLAY_NAME: '&#00f986ᴀɴɴɪʜɪʟᴀᴛᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴛᴏᴛᴀʟ ᴡɪᴘᴇ.'
+      - ' '
+    SLOT: 27
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴀɴɴɪʜɪʟᴀᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  EXILED:
+    DISPLAY_NAME: '&#00f986ᴇxɪʟᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fʙᴀɴɪꜱʜᴇᴅ.'
+      - ' '
+    SLOT: 28
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴇxɪʟᴇᴅ ʙʏ &#00f986<killer>'
+
+  DOMINATED:
+    DISPLAY_NAME: '&#00f986ᴅᴏᴍɪɴᴀᴛᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fᴀʙꜱᴏʟᴜᴛᴇ ᴄᴏɴᴛʀᴏʟ.'
+      - ' '
+    SLOT: 29
+    MESSAGES:
+      - '&#00f986<player> &7ᴡᴀꜱ ᴅᴏᴍɪɴᴀᴛᴇᴅ ʙʏ &#00f986<killer>'
+
+  CLUTCHED:
+    DISPLAY_NAME: '&#00f986ᴄʟᴜᴛᴄʜᴇᴅ'
+    MATERIAL: PAPER
+    DESCRIPTION:
+      - '&fʟᴀꜱᴛ ꜱᴇᴄᴏɴᴅ ᴠɪᴄᴛᴏʀʏ.'
+      - ' '
+    SLOT: 30
+    MESSAGES:
+      - '&#00f986<player> &7ɢᴏᴛ ᴄʟᴜᴛᴄʜᴇᴅ ʙʏ &#00f986<killer>'
