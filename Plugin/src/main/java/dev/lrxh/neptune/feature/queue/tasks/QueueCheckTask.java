@@ -94,50 +94,33 @@ public class QueueCheckTask extends NeptuneRunnable {
                 Participant participant1 = new Participant(player1);
                 Participant participant2 = new Participant(player2);
 
-MessagesLocale.MATCH_FOUND.send(uuid1, TagResolver.resolver(
-        Placeholder.parsed("kit", kit.getDisplayName()),
-        Placeholder.parsed("arena", arena.getDisplayName()),
-        Placeholder.unparsed("opponent", participant2.getNameUnColored()),
-        Placeholder.unparsed("opponent-ping", String.valueOf(ping2)),
-        Placeholder.unparsed("ping", String.valueOf(ping1))
-));
+                MessagesLocale.MATCH_FOUND.send(uuid1, TagResolver.resolver(
+                        Placeholder.parsed("kit", kit.getDisplayName()),
+                        Placeholder.parsed("arena", arena.getDisplayName()),
+                        Placeholder.unparsed("opponent", participant2.getNameUnColored()),
+                        Placeholder.unparsed("opponent-ping", String.valueOf(ping2)),
+                        Placeholder.unparsed("opponent-elo", String.valueOf(profile2.getGameData().get(kit).getElo())),
+                        Placeholder.unparsed("elo", String.valueOf(profile1.getGameData().get(kit).getElo())),
+                        Placeholder.unparsed("ping", String.valueOf(ping1))));
 
-if (Bukkit.getPlayer(uuid1) != null) {
-    Sound sound = SoundsLocale.getSound(SoundsLocale.MATCH_FOUND);
-    if (sound != null) {
-        Bukkit.getPlayer(uuid1).playSound(
-                Bukkit.getPlayer(uuid1).getLocation(),
-                sound,
-                1f,
-                1f
-        );
+                MessagesLocale.MATCH_FOUND.send(uuid2, TagResolver.resolver(
+                        Placeholder.parsed("kit", kit.getDisplayName()),
+                        Placeholder.parsed("arena", arena.getDisplayName()),
+                        Placeholder.unparsed("opponent", participant1.getNameUnColored()),
+                        Placeholder.unparsed("opponent-ping", String.valueOf(ping1)),
+                        Placeholder.unparsed("opponent-elo", String.valueOf(profile1.getGameData().get(kit).getElo())),
+                        Placeholder.unparsed("elo", String.valueOf(profile2.getGameData().get(kit).getElo())),
+                        Placeholder.unparsed("ping", String.valueOf(ping2))));
+
+                TaskScheduler.get().startTaskCurrentTick(new NeptuneRunnable() {
+                    @Override
+                    public void run() {
+                        MatchService.get().startMatch(participant1, participant2, kit, arena, false,
+                                kit.is(KitRule.BEST_OF_THREE) ? 3 : 1);
+                    }
+                });
+            });
+        }
     }
+
 }
-
-MessagesLocale.MATCH_FOUND.send(uuid2, TagResolver.resolver(
-        Placeholder.parsed("kit", kit.getDisplayName()),
-        Placeholder.parsed("arena", arena.getDisplayName()),
-        Placeholder.unparsed("opponent", participant1.getNameUnColored()),
-        Placeholder.unparsed("opponent-ping", String.valueOf(ping1)),
-        Placeholder.unparsed("ping", String.valueOf(ping2))
-));
-
-if (Bukkit.getPlayer(uuid2) != null) {
-    Sound sound = SoundsLocale.getSound(SoundsLocale.MATCH_FOUND);
-    if (sound != null) {
-        Bukkit.getPlayer(uuid2).playSound(
-                Bukkit.getPlayer(uuid2).getLocation(),
-                sound,
-                1f,
-                1f
-        );
-    }
-}
-
-TaskScheduler.get().startTaskCurrentTick(new NeptuneRunnable() {
-    @Override
-    public void run() {
-        MatchService.get().startMatch(participant1, participant2, kit, arena, false,
-                kit.is(KitRule.BEST_OF_THREE) ? 3 : 1);
-    }
-});
