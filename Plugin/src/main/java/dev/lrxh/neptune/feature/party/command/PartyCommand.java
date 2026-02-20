@@ -193,8 +193,8 @@ public class PartyCommand {
         party.transfer(player, target);
     }
 
-    @Command(name = "advertise", desc = "")
-    @Require("neptune.party.advertise")
+    @Command(name = "announce", desc = "")
+    @Require("vigor.party.advertise")
     public void advertise(@Sender Player player) {
         Party party = API.getProfile(player).getGameData().getParty();
         if (party == null) {
