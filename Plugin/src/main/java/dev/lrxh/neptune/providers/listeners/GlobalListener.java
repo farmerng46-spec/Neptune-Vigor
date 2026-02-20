@@ -59,32 +59,35 @@ public class GlobalListener implements Listener {
         }
     }
 
-    @EventHandler
-    public void onPlayerInteract(PlayerInteractEntityEvent event) {
-        if (!(event.getRightClicked() instanceof Player target) || event.getHand() != EquipmentSlot.HAND)
-            return;
-        Player sender = event.getPlayer();
-        if (sender.isSneaking()) return;
-        Profile senderProfile = API.getProfile(sender);
-        Party party = senderProfile.getGameData().getParty();
-        if (party == null || !party.isLeader(sender.getUniqueId()))
-            return;
-        if (senderProfile.getPartyInviteTarget() == target) {
-            senderProfile.setPartyInviteTarget(null);
-            sender.chat("/party invite " + target.getName());
-        } else {
-            senderProfile.setPartyInviteTarget(target);
-            MessagesLocale.PARTY_INVITE_CONFIRM.send(sender, Placeholder.unparsed("player", target.getName()));
-            TaskScheduler.get().startTaskLater(new NeptuneRunnable() {
-                @Override
-                public void run() {
-                    if (senderProfile.getPartyInviteTarget() == target) {
-                        senderProfile.setPartyInviteTarget(null);
-                    }
+@EventHandler
+public void onPlayerInteract(PlayerInteractEntityEvent event) {
+    if (!(event.getRightClicked() instanceof Player target) || event.getHand() != EquipmentSlot.HAND)
+        return;
+    
+    if (target.hasMetadata("NPC")) return;
+
+    Player sender = event.getPlayer();
+    if (sender.isSneaking()) return;
+    Profile senderProfile = API.getProfile(sender);
+    Party party = senderProfile.getGameData().getParty();
+    if (party == null || !party.isLeader(sender.getUniqueId()))
+        return;
+    if (senderProfile.getPartyInviteTarget() == target) {
+        senderProfile.setPartyInviteTarget(null);
+        sender.chat("/party invite " + target.getName());
+    } else {
+        senderProfile.setPartyInviteTarget(target);
+        MessagesLocale.PARTY_INVITE_CONFIRM.send(sender, Placeholder.unparsed("player", target.getName()));
+        TaskScheduler.get().startTaskLater(new NeptuneRunnable() {
+            @Override
+            public void run() {
+                if (senderProfile.getPartyInviteTarget() == target) {
+                    senderProfile.setPartyInviteTarget(null);
                 }
-            }, 200L);
-        }
+            }
+        }, 200L);
     }
+}
 
 @EventHandler
 public void onShiftRightClick(PlayerInteractEntityEvent event) {
