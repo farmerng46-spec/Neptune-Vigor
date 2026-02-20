@@ -10,7 +10,6 @@ import dev.lrxh.neptune.game.kit.menu.editor.button.KitEditorSelectButton;
 import dev.lrxh.neptune.profile.data.ProfileState;
 import dev.lrxh.neptune.profile.impl.Profile;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 
@@ -37,6 +36,15 @@ public class KitEditorCommand {
         }
     }
 
+    @Command(name = "save", desc = "Salva il kit corrente")
+    public void save(@Sender Player player) {
+        Profile profile = API.getProfile(player);
+        if (profile != null && profile.hasState(ProfileState.IN_KIT_EDITOR)) {
+            saveKitAndExit(player, profile);
+            player.closeInventory();
+        }
+    }
+
     @Command(name = "reset", desc = "", usage = "<kit>")
     public void reset(@Sender Player player, Kit kit) {
         if (player == null)
@@ -46,17 +54,25 @@ public class KitEditorCommand {
         profile.getGameData().get(kit).setKitLoadout(kit.getItems());
 
         if (profile.hasState(ProfileState.IN_KIT_EDITOR)) {
-            profile.getGameData().get(profile.getGameData().getKitEditor())
-                    .setKitLoadout(Arrays.asList(player.getInventory().getContents()));
-
-            MessagesLocale.KIT_EDITOR_STOP.send(player.getUniqueId(), Placeholder.parsed("kit", kit.getDisplayName()));
-            if (profile.getGameData().getParty() == null) {
-                profile.setState(ProfileState.IN_LOBBY);
-            } else {
-                profile.setState(ProfileState.IN_PARTY);
-            }
+            saveKitAndExit(player, profile);
         }
 
         MessagesLocale.KIT_EDITOR_RESET.send(player.getUniqueId(), Placeholder.parsed("kit", kit.getDisplayName()));
+    }
+
+    public static void saveKitAndExit(Player player, Profile profile) {
+        Kit kit = profile.getGameData().getKitEditor();
+        if (kit == null) return;
+
+        profile.getGameData().get(kit)
+                .setKitLoadout(Arrays.asList(player.getInventory().getContents()));
+
+        MessagesLocale.KIT_EDITOR_STOP.send(player.getUniqueId(), Placeholder.parsed("kit", kit.getDisplayName()));
+
+        if (profile.getGameData().getParty() == null) {
+            profile.setState(ProfileState.IN_LOBBY);
+        } else {
+            profile.setState(ProfileState.IN_PARTY);
+        }
     }
 }
