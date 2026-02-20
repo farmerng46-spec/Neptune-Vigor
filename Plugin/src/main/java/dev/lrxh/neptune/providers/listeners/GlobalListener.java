@@ -86,15 +86,17 @@ public class GlobalListener implements Listener {
         }
     }
 
-    @EventHandler
-    public void onShiftRightClick(PlayerInteractEntityEvent event) {
-        Player player = event.getPlayer();
-        if (API.getProfile(player).getMatch() != null) return;
-        if (!player.isSneaking()) return;
-        if (event.getRightClicked() instanceof Player clicked && event.getHand() == EquipmentSlot.HAND) {
-            player.chat("/duel " + clicked.getName());
-        }
+@EventHandler
+public void onShiftRightClick(PlayerInteractEntityEvent event) {
+    Player player = event.getPlayer();
+    if (API.getProfile(player).getMatch() != null) return;
+    if (!player.isSneaking()) return;
+    
+    if (event.getRightClicked() instanceof Player clicked && event.getHand() == EquipmentSlot.HAND) {
+        if (clicked.hasMetadata("NPC")) return;
+        player.chat("/duel " + clicked.getName());
     }
+}
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
