@@ -1,4 +1,4 @@
-package tuo.package;
+package dev.lrxh.neptune.game.match.listener;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
