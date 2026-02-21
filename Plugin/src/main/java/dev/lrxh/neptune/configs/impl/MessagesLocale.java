@@ -83,7 +83,7 @@ public enum MessagesLocale implements IDataAccessor {
             " ",
             "&#00A4FC&lᴍᴀᴛᴄʜ ꜱᴜᴍᴍᴀʀʏ",
             " &#00A4FC&l❙&r &fᴡɪɴɴᴇʀ: &#00A4FC<winner>",
-            " &#00A4FC&l❙&r &fʟᴏꜱᴇʀ: &#00A4FC<loser>"
+            " &#00A4FC&l❙&r &fʟᴏꜱᴇʀ: &#00A4FC<loser>",
             " "),
     MATCH_END_DETAILS_TEAM("MATCH.END_DETAILS_MESSAGE.TEAM", DataType.STRING_LIST,
             " ",
@@ -136,7 +136,7 @@ public enum MessagesLocale implements IDataAccessor {
             " ",
             "<accept><hover:show_text:'&aClick to accept duel request'>&a&l(ᴄʟɪᴄᴋ ᴛᴏ ᴀᴄᴄᴇᴘᴛ)</hover></accept>"),
     DUEL_REQUEST_SENDER("DUEL.SENDER", DataType.STRING_LIST, " ",
-            ""
+            "",
             "&#00A4FC&lᴅᴜᴇʟ ʀᴇǫᴜᴇꜱᴛ ꜱᴇɴᴛ",
             " ",
             " &#00A4FC&l❙&r &fᴛᴏ: &#00A4FC<receiver>",
@@ -156,7 +156,7 @@ public enum MessagesLocale implements IDataAccessor {
     YOU_DONT_HAVE_DUEL_REQUEST("DUEL.YOU_DONT_HAVE_DUEL_REQUEST", DataType.STRING_LIST,
             "&4&l⚠&r &cʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴀɴʏ ᴅᴜᴇʟ ʀᴇǫᴜᴇꜱᴛ ꜰʀᴏᴍ ᴛʜɪꜱ ᴘʟᴀʏᴇʀ!"),
     DUEL_REQUEST_COULDNT_BE_ACCEPTED("DUEL.REQUEST_COULDNT_BE_ACCEPTED", DataType.STRING_LIST,
-            "&4&l⚠&r &cᴅᴜᴇʟ ʀᴇǫᴜᴇꜱᴛ ᴄᴏᴜʟᴅɴ'ᴛ ʙᴇ ᴀᴄᴄᴇᴘᴛᴇᴅ!");
+            "&4&l⚠&r &cᴅᴜᴇʟ ʀᴇǫᴜᴇꜱᴛ ᴄᴏᴜʟᴅɴ'ᴛ ʙᴇ ᴀᴄᴄᴇᴘᴛᴇᴅ!"),
 
     REMATCH_REQUEST_RECEIVER("REMATCH.SENT", DataType.STRING_LIST, " ",
             "&#00A4FC&lʀᴇᴍᴀᴛᴄʜ ʀᴇǫᴜᴇꜱᴛ",
