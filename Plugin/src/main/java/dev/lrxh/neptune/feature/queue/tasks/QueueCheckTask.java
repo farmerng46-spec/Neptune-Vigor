@@ -99,7 +99,7 @@ public class QueueCheckTask extends NeptuneRunnable {
                 Placeholder.parsed("arena", arena.getDisplayName()),
                 Placeholder.unparsed("opponent", participant2.getNameUnColored()),
                 Placeholder.unparsed("opponent-ping", String.valueOf(ping2)),
-                Placeholder.unparsed("ping", String.valueOf(ping1))
+                Placeholder.unparsed("ping", String.valueOf(ping1)),
                 SoundLocale.MATCH_FOUND.play(uuid1);
 
 
