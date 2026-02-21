@@ -1,6 +1,7 @@
 package dev.lrxh.neptune.feature.queue.tasks;
 
 import dev.lrxh.neptune.API;
+import dev.lrxh.neptune.configs.impl.SoundsLocale;
 import dev.lrxh.neptune.configs.impl.MessagesLocale;
 import dev.lrxh.neptune.feature.queue.QueueEntry;
 import dev.lrxh.neptune.feature.queue.QueueService;
