@@ -34,7 +34,7 @@ public enum MessagesLocale implements IDataAccessor {
     MATCH_DEATH_DIED("MATCH.DEATH.DIED", DataType.STRING_LIST, "<player> &7died"),
     MATCH_DEATH_VOID("MATCH.DEATH.VOID", DataType.STRING_LIST,
                         "<player> &7fell into the void while fighting <killer>"),
-    QUEUE_JOIN("QUEUE.JOIN", DataType.STRING_LIST, " " ", "&#00A4FC&lᴄᴀꜱᴜᴀʟ <kit>", "&7ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ ᴍᴀᴛᴄʜ…",""),
+    QUEUE_JOIN("QUEUE.JOIN", DataType.STRING_LIST, " ", "&#00A4FC&lᴄᴀꜱᴜᴀʟ <kit>", "&7ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ ᴍᴀᴛᴄʜ…",""),
     QUEUE_LEAVE("QUEUE.LEAVE", DataType.STRING_LIST, "&cʏᴏᴜ ʟᴇꜰᴛ ᴛʜᴇ ǫᴜᴇᴜᴇ!"),
     QUEUE_ACTION_BAR("QUEUE.ACTION_BAR", DataType.STRING, ""),
     QUEUE_REPEAT("QUEUE.REPEAT.MESSAGE", DataType.STRING_LIST, "&7ꜱᴇᴀʀᴄʜɪɴɢ ꜰᴏʀ ᴏᴛʜᴇʀ ᴘʟᴀʏᴇʀꜱ ɪɴ ǫᴜᴇᴜᴇ…"),
