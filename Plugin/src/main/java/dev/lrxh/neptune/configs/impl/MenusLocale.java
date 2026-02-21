@@ -102,6 +102,7 @@ public enum MenusLocale implements IDataAccessor {
             "1, 3, 5, 6, 10, 15, 20"),
     ARENA_TITLE("ARENA.TITLE", DataType.STRING, "Select an arena"),
     ARENA_FILTER("ARENA.FILTER-TYPE", DataType.STRING, "FILL"),
+    ARENA_LIST_STARTING_SLOT("ARENA.LIST.STARTING-SLOT", DataType.INT, "1"),
     ARENA_SIZE("ARENA.SIZE", DataType.INT, "27"),
     ARENA_ITEM_NAME("ARENA.ITEM.NAME", DataType.STRING, "&b<arena>"),
     ARENA_ITEM_LORE("ARENA.ITEM.LORE", DataType.STRING_LIST, "", "&fSelect <arena> as the battle arena"),
