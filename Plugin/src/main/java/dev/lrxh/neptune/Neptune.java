@@ -2,6 +2,7 @@ package dev.lrxh.neptune;
 
 import com.jonahseguin.drink.CommandService;
 import com.jonahseguin.drink.Drink;
+import dev.lrxh.neptune.game.match.listener.MatchKillActionBarListener;
 import com.jonahseguin.drink.annotation.Text;
 import com.jonahseguin.drink.provider.spigot.UUIDProvider;
 import dev.lrxh.api.NeptuneAPI;
@@ -144,6 +145,7 @@ public final class Neptune extends JavaPlugin {
 
     private void registerListeners() {
         Arrays.asList(
+                        new MatchKillActionBarListener(),
                         new ProfileListener(),
                         new MatchListener(),
                         new GlobalListener(),
