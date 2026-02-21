@@ -101,7 +101,7 @@ public class QueueCheckTask extends NeptuneRunnable {
                         Placeholder.unparsed("opponent", participant2.getNameUnColored()),
                         Placeholder.unparsed("opponent-ping", String.valueOf(ping2)),
                         Placeholder.unparsed("ping", String.valueOf(ping1)))),
-                        SoundLocale.MATCH_FOUND.play(uuid1);
+                        SoundsLocale.MATCH_FOUND.play(uuid1);
         
 
                 MessagesLocale.MATCH_FOUND.send(uuid2, TagResolver.resolver(
@@ -110,7 +110,7 @@ public class QueueCheckTask extends NeptuneRunnable {
                         Placeholder.unparsed("opponent", participant1.getNameUnColored()),
                         Placeholder.unparsed("opponent-ping", String.valueOf(ping1)),
                         Placeholder.unparsed("ping", String.valueOf(ping2))));
-                        SoundLocale.MATCH_FOUND.play(uuid2);
+                        SoundsLocale.MATCH_FOUND.play(uuid2);
 
                 TaskScheduler.get().startTaskCurrentTick(new NeptuneRunnable() {
                     @Override
