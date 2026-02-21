@@ -95,13 +95,13 @@ public class QueueCheckTask extends NeptuneRunnable {
                 Participant participant2 = new Participant(player2);
 
                 MessagesLocale.MATCH_FOUND.send(uuid1, TagResolver.resolver(
-                Placeholder.parsed("kit", kit.getDisplayName()),
-                Placeholder.parsed("arena", arena.getDisplayName()),
-                Placeholder.unparsed("opponent", participant2.getNameUnColored()),
-                Placeholder.unparsed("opponent-ping", String.valueOf(ping2)),
-                Placeholder.unparsed("ping", String.valueOf(ping1)),
-                SoundLocale.MATCH_FOUND.play(uuid1);
-
+                       Placeholder.parsed("kit", kit.getDisplayName()),
+                        Placeholder.parsed("arena", arena.getDisplayName()),
+                        Placeholder.unparsed("opponent", participant2.getNameUnColored()),
+                        Placeholder.unparsed("opponent-ping", String.valueOf(ping2)),
+                        Placeholder.unparsed("ping", String.valueOf(ping1)))),
+                        SoundLocale.MATCH_FOUND.play(uuid1);
+        
 
                 MessagesLocale.MATCH_FOUND.send(uuid2, TagResolver.resolver(
                         Placeholder.parsed("kit", kit.getDisplayName()),
