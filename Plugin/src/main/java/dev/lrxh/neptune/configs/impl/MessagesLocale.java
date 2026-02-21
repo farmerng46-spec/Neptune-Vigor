@@ -58,6 +58,7 @@ public enum MessagesLocale implements IDataAccessor {
                         "",
                         "&7ʏᴏᴜ’ᴠᴇ ʙᴇᴇɴ ᴘʀᴏᴍᴏᴛᴇᴅ ᴛᴏ &f<division>&7.",
                         ""),
+    MATCH_KILL_ACTIONBAR("MATCH.KILL.ACTIONBAR", DataType.STRING, "&#FC0000&l🗡 &f<player> &#FC0000&l🗡"),
     MATCH_STARTING_TITLE_FOOTER("MATCH.STARTING.TITLE-FOOTER", DataType.STRING, ""),
     PARKOUR_CHECKPOINT("MATCH.PARKOUR.CHECKPOINT", DataType.STRING_LIST,
                         "&a<player> finished checkpoint <checkpoint> in <time>!"),
