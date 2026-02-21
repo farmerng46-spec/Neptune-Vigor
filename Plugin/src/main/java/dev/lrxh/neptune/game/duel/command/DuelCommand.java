@@ -63,9 +63,22 @@ public class DuelCommand {
         new KitSelectMenu(target.getUniqueId(), userProfile.getState().equals(ProfileState.IN_PARTY)).open(player);
     }
 
+    @Command(name = "accept", desc = "Accept a party invitation", usage = "<player>")
+    public void accept(@Sender Player player, String targetName) {
+        Player target = Bukkit.getPlayer(targetName);
+        
+        if (target == null) {
+            player.sendMessage("§cThat player is not online!");
+            return;
+        }
+
+        acceptUUID(player, target.getUniqueId());
+    }
+
     @Command(name = "accept-uuid", desc = "", usage = "<uuid>", hidden = true)
     public void acceptUUID(@Sender Player player, UUID uuid) {
         Profile profile = API.getProfile(player);
+        if (profile == null) return;
         GameData playerGameData = profile.getGameData();
 
         if (profile.getMatch() != null || profile.getState().equals(ProfileState.IN_SPECTATOR)
