@@ -80,7 +80,7 @@ public enum MessagesLocale implements IDataAccessor {
             " &#00A4FC&l❙&r &fʟᴏꜱᴇʀ: &#00A4FC<loser>",
             " "),
     MATCH_END_DETAILS_DUEL("MATCH.END_DETAILS_MESSAGE.DUEL", DataType.STRING_LIST,
-            " ",
+            " "),
             "&#00A4FC&lᴍᴀᴛᴄʜ ꜱᴜᴍᴍᴀʀʏ",
             " &#00A4FC&l❙&r &fᴡɪɴɴᴇʀ: &#00A4FC<winner>",
             " &#00A4FC&l❙&r &fʟᴏꜱᴇʀ: &#00A4FC<loser>",
