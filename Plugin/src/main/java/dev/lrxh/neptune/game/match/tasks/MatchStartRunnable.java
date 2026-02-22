@@ -1,5 +1,7 @@
 package dev.lrxh.neptune.game.match.tasks;
 
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import dev.lrxh.api.events.MatchStartEvent;
 import dev.lrxh.neptune.API;
 import dev.lrxh.neptune.configs.impl.MessagesLocale;
@@ -61,6 +63,11 @@ public class MatchStartRunnable extends NeptuneRunnable {
             return;
         }
         if (match.getState().equals(MatchState.STARTING)) {
+            player.addPotionEffect(new org.bukkit.potion.PotionEffect(org.bukkit.potion.PotionEffectType.SPEED, 1200, 1));
+            player.addPotionEffect(new org.bukkit.potion.PotionEffect(org.bukkit.potion.PotionEffectType.INCREASE_DAMAGE, 1200, 1));
+            player.addPotionEffect(new org.bukkit.potion.PotionEffect(org.bukkit.potion.PotionEffectType.ABSORPTION, 2400, 0));
+            match.playSound(SoundsLocale.getSound(SoundsLocale.POTION_THROW));
+            match.playSound(SoundsLocale.getSound(SoundsLocale.MATCH_FOUND));
             match.playSound(SoundsLocale.getSound(SoundsLocale.MATCH_START_COUNTDOWN));
             match.sendTitle(
                     CC.color(MessagesLocale.MATCH_STARTING_TITLE_HEADER.getString().replace("<countdown-time>",
