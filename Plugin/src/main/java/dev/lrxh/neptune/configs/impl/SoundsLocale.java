@@ -31,6 +31,7 @@ public enum SoundsLocale implements IDataAccessor {
     MATCH_LOSE("match-lose", "Plays when a player clicks a button in a menu", DataType.STRING, "BLOCK_CONDUIT_DEACTIVATE"),
     MATCH_FOUND("match-found", "Plays for all queued player", DataType.STRING, "BLOCK_TRIAL_SPAWNER_EJECT_ITEM"),
     PARTY_JOIN("party_join", "Plays when you join in a party", DataType.STRING, "block.amethyst_block.hit"),
+    POTION_THROW("potion_throw", "Plays when the match starts with effects", DataType.STRING, "entity.splash_potion.throw"),
     PARTY_CREATE("party_create", "Plays when you create a party", DataType.STRING, "item.goat_horn.sound.1");
     private final String path;
     private final String comment;
