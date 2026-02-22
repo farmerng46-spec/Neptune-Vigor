@@ -170,31 +170,45 @@ public enum ItemAction {
         }
     },
     REMATCH() {
-        @Override
-        public void execute(Player player) {
-            Profile profile = API.getProfile(player);
-            if (profile == null)
-                return;
-            SoloFightMatch match = (SoloFightMatch) profile.getMatch();
-            if (match == null)
-                return;
-            match.getKit().getRandomArena().thenAccept(arena -> {
-                if (arena == null) {
-                    MessagesLocale.QUEUE_NO_ARENAS.send(player);
-                    return;
-                }
-                DuelRequest duelRequest = new DuelRequest(profile.getPlayerUUID(), match.getKit(), arena, false,
-                        match.getRounds());
-                Player opponent = match.getParticipant(player).getOpponent().getPlayer();
-                if (opponent == null)
-                    return;
-                Profile opponentProfile = API.getProfile(opponent);
-                if (opponentProfile == null)
-                    return;
-                opponentProfile.sendRematch(duelRequest);
-            });
+    @Override
+    public void execute(Player player) {
+        java.util.UUID playerUUID = player.getUniqueId();
+        long currentTime = System.currentTimeMillis();
+
+        if (rematchCooldowns.containsKey(playerUUID) && (currentTime - rematchCooldowns.get(playerUUID) < 30000)) {
+            return;
         }
-    },
+
+        Profile profile = API.getProfile(player);
+        if (profile == null)
+            return;
+            
+        SoloFightMatch match = (SoloFightMatch) profile.getMatch();
+        if (match == null)
+            return;
+            
+        match.getKit().getRandomArena().thenAccept(arena -> {
+            if (arena == null) {
+                MessagesLocale.QUEUE_NO_ARENAS.send(player);
+                return;
+            }
+            
+            DuelRequest duelRequest = new DuelRequest(profile.getPlayerUUID(), match.getKit(), arena, false, match.getRounds());
+            
+            Player opponent = match.getParticipant(player).getOpponent().getPlayer();
+            if (opponent == null)
+                return;
+                
+            Profile opponentProfile = API.getProfile(opponent);
+            if (opponentProfile == null)
+                return;
+                
+            opponentProfile.sendRematch(duelRequest);
+            
+            rematchCooldowns.put(playerUUID, System.currentTimeMillis());
+        });
+    }
+},
     SETTINGS() {
         @Override
         public void execute(Player player) {
