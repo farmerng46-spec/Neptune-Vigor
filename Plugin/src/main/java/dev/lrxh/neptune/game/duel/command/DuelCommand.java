@@ -60,7 +60,7 @@ public class DuelCommand {
             return;
         }
 
-        new KitSelectMenu(target.getUniqueId(), userProfile.getState().equals(ProfileState.IN_PARTY)).open(player);
+        new KitSelectMenu(target, userProfile.getState().equals(ProfileState.IN_PARTY)).open(player);
     }
 
     @Command(name = "accept", desc = "Accept a party invitation", usage = "<player>")
